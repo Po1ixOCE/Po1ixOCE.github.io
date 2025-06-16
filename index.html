@@ -5,72 +5,66 @@
   <title>po1ix</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    html, body {
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
       height: 100%;
+      width: 100%;
       overflow: hidden;
       font-family: monospace;
-      font-size: 16px;
-      color: #fff;
     }
 
-    body {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      line-height: 1.6;
-      padding: 40px;
-    }
-
-    video.bg-video {
+    video#bg {
       position: fixed;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
+      min-width: 100%;
+      min-height: 100%;
       object-fit: cover;
-      z-index: 0;
-      pointer-events: none;
+      z-index: -1;
     }
 
-    h1 {
-      font-size: 32px;
+    .content {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      height: 100%;
+      padding-top: 25px;
+      text-align: center;
+      color: white;
+    }
+
+    .content img {
+      width: 1000px;
+      max-width: 90%;
+      height: auto;
+    }
+
+    .content p {
+      margin-top: 20px;
+      font-size: 24px;
       text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 0.5em;
-    }
-
-    a {
-      color: #fff;
-      text-decoration: underline;
-    }
-
-    footer {
-      margin-top: 3em;
-      font-size: 14px;
+      letter-spacing: 2px;
     }
   </style>
 </head>
 <body>
-  <!-- Background Video -->
-  <video class="bg-video" autoplay muted loop playsinline>
+
+  <video id="bg" autoplay muted loop playsinline>
     <source src="media/home/CRT_BG.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 
-  <!-- Foreground Content -->
-  <h1>po1ix</h1>
-  <p>Welcome to my little corner of the internet.</p>
-  <p>This site is handmade with HTML. and hosted for free using GitHub Pages.</p>
-  <p>Projects / links / thoughts might go here eventually.</p>
+  <div class="content">
+    <img src="media/home/Po1ix Title.gif" alt="Po1ix Title">
+    <p>coming soon</p>
+  </div>
 
-  <footer>
-    <p><a href="mailto:you@example.com">contact me</a></p>
-  </footer>
 </body>
 </html>
