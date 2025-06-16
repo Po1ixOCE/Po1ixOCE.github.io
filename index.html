@@ -5,25 +5,51 @@
   <title>po1ix</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body {
-      background: #fffbe6;
-      color: #000;
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
       font-family: monospace;
       font-size: 16px;
-      margin: 0;
-      padding: 40px;
-      line-height: 1.6;
+      color: #fff;
     }
+
+    body {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      line-height: 1.6;
+      padding: 40px;
+    }
+
+    video.bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+      pointer-events: none;
+    }
+
     h1 {
       font-size: 32px;
       text-transform: uppercase;
       letter-spacing: 1px;
       margin-bottom: 0.5em;
     }
+
     a {
-      color: #000;
+      color: #fff;
       text-decoration: underline;
     }
+
     footer {
       margin-top: 3em;
       font-size: 14px;
@@ -31,10 +57,16 @@
   </style>
 </head>
 <body>
+  <!-- Background Video -->
+  <video class="bg-video" autoplay muted loop playsinline>
+    <source src="media/home/CRT_BG.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Foreground Content -->
   <h1>po1ix</h1>
   <p>Welcome to my little corner of the internet.</p>
-  <p>This site is handmade with. HTML and hosted for free using GitHub Pages.</p>
-
+  <p>This site is handmade with HTML and hosted for free using GitHub Pages.</p>
   <p>Projects / links / thoughts might go here eventually.</p>
 
   <footer>
@@ -42,4 +74,3 @@
   </footer>
 </body>
 </html>
-
