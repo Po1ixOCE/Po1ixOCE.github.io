@@ -12,15 +12,28 @@ body { font-family: 'Source Code Pro', monospace; overflow:hidden; background:bl
 /* Title */
 #title {
   position: absolute;
-  top: 60px;
+  top: 40px;
   left: 50%;
   transform: translateX(-50%);
   pointer-events: none;
 }
+#title img {
+  width: 500px; /* scale title down */
+  height: auto;
+}
+
+/* Main icon row */
+.panel-row {
+  position: absolute;
+  top: 380px; /* adjust vertical position */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 180px; /* space between icons */
+}
 
 /* Panel containers */
 .panel {
-  position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,16 +43,14 @@ body { font-family: 'Source Code Pro', monospace; overflow:hidden; background:bl
   font-family: 'Source Code Pro', monospace;
 }
 
-/* Icon container */
+/* Icon sizing (all same baseline width) */
 .panel .icon {
   position: relative;
-  width: 200px; /* default */
+  width: 180px;
   height: auto;
 }
-.panel.about .icon { width: 160px; }
-.panel.illustration .icon { width: 200px; }
-.panel.film .icon { width: 220px; }
-.panel.feedback .icon { width: 140px; }
+.panel.about .icon { width: 160px; } /* smaller About icon */
+.panel.film .icon { width: 200px; }  /* slightly larger Film icon */
 
 /* Icon images stacked */
 .panel .icon img {
@@ -48,28 +59,29 @@ body { font-family: 'Source Code Pro', monospace; overflow:hidden; background:bl
   position: absolute;
   left: 0; top: 0;
   transition: opacity 0.15s linear;
-  pointer-events: none; /* prevents flicker gap */
+  pointer-events: none;
 }
 .panel .icon img.idle { z-index: 1; opacity: 1; }
 .panel .icon img.hover { z-index: 2; opacity: 0; }
-
-/* Swap smoothly */
 .panel:hover .icon img.hover { opacity: 1; }
 .panel:hover .icon img.idle  { opacity: 0; }
 
 /* Labels */
 .panel span {
-  margin-top: 8px;
-  font-size: 16px;
+  margin-top: 12px;
+  font-size: 18px;
   color: white;
   text-align: center;
 }
 
-/* Placement */
-.panel.illustration { left: 420px; top: 400px; }
-.panel.about        { left: 860px; top: 400px; }
-.panel.film         { left: 1300px; top: 400px; }
-.panel.feedback     { left: 1550px; top: 750px; }
+/* Feedback bottom-right */
+.panel.feedback {
+  position: absolute;
+  bottom: 80px;
+  right: 120px;
+}
+.panel.feedback .icon { width: 140px; }
+.panel.feedback span { font-size: 16px; }
 
 /* Preload hover images to prevent flicker */
 body::after {
