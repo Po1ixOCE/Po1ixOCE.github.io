@@ -2,67 +2,49 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>po1ix</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body, html {
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      font-family: monospace;
-      color: white;
-    }
+  <title>Po1ix</title>
+  <link rel="stylesheet" href="style.css">
 
-    video#bg-video {
-      position: fixed;
-      top: 0;
-      left: 0;
-      min-width: 100%;
-      min-height: 100%;
-      object-fit: cover;
-      z-index: -1;
-    }
-
-    .content {
-      position: relative;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: start;
-      align-items: center;
-      padding-top: 25px;
-      text-align: center;
-    }
-
-    .logo {
-      width: 1000px;
-      height: auto;
-    }
-
-    .coming-soon {
-      margin-top: 40px;
-      font-size: 24px;
-    }
-  </style>
+  <!-- Source Code Pro font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
   <!-- Background video -->
-  <video autoplay muted loop id="bg-video">
-    <source src="media/home/CRT_BG.mp4" type="video/mp4">
-    Your browser does not support HTML5 video.
+  <video autoplay muted loop playsinline id="bg-video">
+    <source src="assets/CRT_BG.mp4" type="video/mp4">
   </video>
 
-  <!-- Foreground content -->
-  <div class="content">
-    <img src="media/home/Po1ix Title.gif" alt="Po1ix Logo" class="logo">
-    <p class="coming-soon">COMING SOON</p>
+  <!-- Title -->
+  <div id="title">
+    <img src="assets/Po1ix Title.gif" alt="Po1ix Title">
   </div>
 
+  <!-- Illustration -->
+  <a class="panel illustration" href="illustration.html">
+    <img class="idle" src="assets/Illustraltion.png" alt="Illustration">
+    <img class="hover" src="assets/Illustraltion Hover.png" alt="Illustration hover">
+  </a>
+
+  <!-- About Me -->
+  <a class="panel about" href="about.html">
+    <img class="idle" src="assets/About Me.png" alt="About Me">
+    <img class="hover" src="assets/About Me Hover.gif" alt="About Me hover">
+  </a>
+
+  <!-- Film -->
+  <a class="panel film" href="film.html">
+    <img class="idle" src="assets/Film.png" alt="Film">
+    <img class="hover" src="assets/Film Hover.png" alt="Film hover">
+  </a>
+
+  <!-- Feedback -->
+  <a class="panel feedback" href="feedback.html">
+    <img class="idle" src="assets/Feedback box.png" alt="Feedback">
+    <img class="hover" src="assets/Feedback box Hover.png" alt="Feedback hover">
+  </a>
 </body>
 </html>
+
