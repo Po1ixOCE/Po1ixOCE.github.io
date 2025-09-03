@@ -18,18 +18,64 @@ body { font-family: 'Source Code Pro', monospace; overflow:hidden; background:bl
   pointer-events: none;
 }
 
-/* Panels */
+/* Panel containers */
 .panel {
   position: absolute;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  font-family: 'Source Code Pro', monospace;
 }
-.panel img { position:absolute; left:0; top:0; }
-.panel img.hover { opacity:0; transition:opacity 0.1s linear; }
-.panel:hover img.hover { opacity:1; }
-.panel:hover img.idle  { opacity:0; }
 
-/* Placement from HOME TEMPLATE.png */
+/* Icon container */
+.panel .icon {
+  position: relative;
+  width: 200px; /* default */
+  height: auto;
+}
+.panel.about .icon { width: 160px; }
+.panel.illustration .icon { width: 200px; }
+.panel.film .icon { width: 220px; }
+.panel.feedback .icon { width: 140px; }
+
+/* Icon images stacked */
+.panel .icon img {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  left: 0; top: 0;
+  transition: opacity 0.15s linear;
+  pointer-events: none; /* prevents flicker gap */
+}
+.panel .icon img.idle { z-index: 1; opacity: 1; }
+.panel .icon img.hover { z-index: 2; opacity: 0; }
+
+/* Swap smoothly */
+.panel:hover .icon img.hover { opacity: 1; }
+.panel:hover .icon img.idle  { opacity: 0; }
+
+/* Labels */
+.panel span {
+  margin-top: 8px;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+}
+
+/* Placement */
 .panel.illustration { left: 420px; top: 400px; }
 .panel.about        { left: 860px; top: 400px; }
 .panel.film         { left: 1300px; top: 400px; }
 .panel.feedback     { left: 1550px; top: 750px; }
+
+/* Preload hover images to prevent flicker */
+body::after {
+  content: url("assets/About Me Hover.gif")
+           url("assets/Film Hover.png")
+           url("assets/Illustration Hover.png")
+           url("assets/Feedback box Hover.png");
+  display: none;
+}
