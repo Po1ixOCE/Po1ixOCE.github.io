@@ -18,18 +18,18 @@ body { font-family: 'Source Code Pro', monospace; overflow:hidden; background:bl
   pointer-events: none;
 }
 #title img {
-  width: 500px; /* scaled down */
+  width: 500px; /* scale title */
   height: auto;
 }
 
 /* Main icon row */
 .panel-row {
   position: absolute;
-  top: 380px; /* vertical alignment */
+  top: 380px; /* adjust to move row up/down */
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 180px; /* spacing between icons */
+  gap: 180px; /* space between icons */
 }
 
 /* Panel containers */
@@ -43,24 +43,24 @@ body { font-family: 'Source Code Pro', monospace; overflow:hidden; background:bl
   font-family: 'Source Code Pro', monospace;
 }
 
-/* Icon container (fixed height so text always sits below) */
+/* Icon container (no fixed height → keeps aspect ratio) */
 .panel .icon {
   position: relative;
-  width: 180px;   /* baseline size */
-  height: 180px;  /* keeps text below icon */
+  width: 180px;
+  height: auto;
 }
-.panel.about .icon { width: 160px; height: 160px; }
-.panel.film .icon { width: 200px; height: 200px; }
-.panel.feedback .icon { width: 140px; height: 140px; }
+.panel.about .icon { width: 160px; }
+.panel.film .icon { width: 200px; }
+.panel.feedback .icon { width: 140px; }
 
 /* Icon images stacked */
 .panel .icon img {
   width: 100%;
-  height: 100%;
+  height: auto; /* natural aspect ratio */
   position: absolute;
   left: 0; top: 0;
   transition: opacity 0.15s linear;
-  pointer-events: none; /* avoids flicker gaps */
+  pointer-events: none;
 }
 .panel .icon img.idle { z-index: 1; opacity: 1; }
 .panel .icon img.hover { z-index: 2; opacity: 0; }
@@ -68,15 +68,15 @@ body { font-family: 'Source Code Pro', monospace; overflow:hidden; background:bl
 .panel:hover .icon img.hover { opacity: 1; }
 .panel:hover .icon img.idle  { opacity: 0; }
 
-/* Labels (uniform under icons) */
+/* Labels (uniform below icons) */
 .panel span {
-  margin-top: 14px;
+  margin-top: 20px;  /* consistent gap */
   font-size: 18px;
   color: white;
   text-align: center;
 }
 
-/* Feedback panel (bottom-right) */
+/* Feedback panel (bottom-right corner) */
 .panel.feedback {
   position: absolute;
   bottom: 80px;
