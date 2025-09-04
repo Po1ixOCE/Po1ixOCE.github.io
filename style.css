@@ -106,3 +106,36 @@ body::after {
            url("assets/Feedback box Hover.png");
   display: none;
 }
+
+/* ============================= */
+/* 📱 Mobile adjustments */
+/* ============================= */
+@media (max-width: 768px) {
+  #title img {
+    width: 60vw; /* larger title on small screens */
+  }
+
+  .panel-row {
+    top: 30vh;
+    flex-direction: column;
+    gap: 6vh;       /* vertical space between icons */
+    width: 100%;
+  }
+
+  .panel .icon {
+    width: 35vw;    /* scale icons to fit mobile */
+    max-width: 200px;
+  }
+
+  .panel span {
+    font-size: 2.5vh;
+  }
+
+  .panel.feedback {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    margin-top: 8vh;
+    align-self: center;
+  }
+}
