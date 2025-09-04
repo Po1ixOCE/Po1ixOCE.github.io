@@ -24,7 +24,7 @@ body { font-family: 'Source Code Pro', monospace; overflow:hidden; background:bl
   pointer-events: none;
 }
 #title img {
-  width: 27vw;   /* logo stays 10% smaller */
+  width: 27vw;   /* logo 10% smaller */
   max-width: 450px;
   height: auto;
 }
@@ -32,13 +32,13 @@ body { font-family: 'Source Code Pro', monospace; overflow:hidden; background:bl
 /* Main icon row */
 .panel-row {
   position: absolute;
-  top: 18vh;  /* 🔹 moved up 10% more (was 28vh) */
+  top: 28vh;  /* 🔹 back to original height */
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   justify-content: center;
-  align-items: flex-end; /* ensures labels align */
-  gap: 8.5vw;
+  align-items: flex-end; /* align text baselines */
+  gap: 8.5vw; /* 5% closer */
   width: 80%;
   max-width: 1000px;
 }
@@ -56,12 +56,12 @@ body { font-family: 'Source Code Pro', monospace; overflow:hidden; background:bl
 /* Icon sizing */
 .panel .icon {
   position: relative;
-  width: 10.8vw;     /* 🔹 10% smaller than before */
-  max-width: 180px;  /* reduced from 200px */
+  width: 10.8vw;     /* 10% smaller */
+  max-width: 180px;
 }
 .panel.about .icon {
-  width: 8vw;        /* 🔹 20% smaller than others */
-  max-width: 140px; 
+  width: 8vw;        /* 20% smaller */
+  max-width: 140px;
 }
 .panel .icon img {
   width: 100%;
@@ -107,23 +107,23 @@ body::after {
 /* ============================= */
 @media (max-width: 768px) {
   #title img {
-    width: 54vw; /* logo stays 10% smaller */
+    width: 54vw; /* logo 10% smaller */
   }
 
   .panel-row {
-    top: 20vh; /* move up on mobile as well */
+    top: 25vh; /* keep slightly higher on mobile */
     flex-direction: column;
     gap: 6vh;
     width: 100%;
   }
 
   .panel .icon {
-    width: 32vw;   /* 10% smaller than before */
+    width: 32vw;   /* 10% smaller */
     max-width: 200px;
   }
 
   .panel.about .icon {
-    width: 25vw;   /* 20% smaller than others */
+    width: 25vw;   /* 20% smaller */
     max-width: 160px;
   }
 
