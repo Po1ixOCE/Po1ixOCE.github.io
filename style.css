@@ -37,8 +37,8 @@ body { font-family: 'Source Code Pro', monospace; overflow:hidden; background:bl
   transform: translateX(-50%);
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  gap: 12vw;
+  align-items: flex-end; /* 🔹 align bottoms evenly */
+  gap: 9vw; /* 🔹 reduced gap (~30px closer) */
   width: 80%;
   max-width: 1000px;
 }
@@ -58,6 +58,10 @@ body { font-family: 'Source Code Pro', monospace; overflow:hidden; background:bl
   position: relative;
   width: 12vw;
   max-width: 200px;
+}
+.panel.about .icon {
+  width: 8vw;      /* 🔹 make skeleton smaller */
+  max-width: 150px; /* 🔹 keep proportionally smaller */
 }
 .panel .icon img {
   width: 100%;
@@ -99,7 +103,7 @@ body::after {
 }
 
 /* ============================= */
-/*  Mobile adjustments */
+/* 📱 Mobile adjustments */
 /* ============================= */
 @media (max-width: 768px) {
   #title img {
@@ -116,6 +120,11 @@ body::after {
   .panel .icon {
     width: 35vw;
     max-width: 220px;
+  }
+
+  .panel.about .icon {
+    width: 30vw;   /* scale skeleton appropriately on mobile */
+    max-width: 180px;
   }
 
   .panel span {
