@@ -53,7 +53,7 @@ body { font-family: 'Source Code Pro', monospace; overflow:hidden; background:bl
   font-family: 'Source Code Pro', monospace;
 }
 
-/* General icons */
+/* Icon sizing */
 .panel .icon {
   position: relative;
   width: 12vw;
@@ -72,32 +72,6 @@ body { font-family: 'Source Code Pro', monospace; overflow:hidden; background:bl
 }
 .panel:hover .icon img.hover { opacity: 1; }
 .panel:hover .icon img.idle  { opacity: 0; }
-
-/* Special skeleton wrap (fixed width) */
-.skeleton-wrap {
-  position: relative;
-  width: 300px;   /* set to the width of the raised skeleton */
-  height: auto;
-}
-.skeleton-wrap img {
-  display: block;
-  transition: opacity 0.15s linear;
-}
-.skeleton-wrap img.idle {
-  width: 200px;   /* fixed size idle */
-  margin: 0 auto; /* center idle skeleton */
-  position: relative;
-  opacity: 1;
-}
-.skeleton-wrap img.raised {
-  width: 300px;   /* matches container width */
-  position: absolute;
-  right: 0;       /* lock right edge */
-  top: 0;
-  opacity: 0;
-}
-.skeleton-wrap:hover img.raised { opacity: 1; }
-.skeleton-wrap:hover img.idle   { opacity: 0; }
 
 /* Labels */
 .panel span {
@@ -125,7 +99,7 @@ body::after {
 }
 
 /* ============================= */
-/* 📱 Mobile adjustments */
+/*  Mobile adjustments */
 /* ============================= */
 @media (max-width: 768px) {
   #title img {
@@ -142,17 +116,6 @@ body::after {
   .panel .icon {
     width: 35vw;
     max-width: 220px;
-  }
-
-  .skeleton-wrap {
-    width: 300px; /* keep consistent on mobile */
-  }
-  .skeleton-wrap img.idle {
-    width: 200px;
-  }
-  .skeleton-wrap img.raised {
-    width: 300px;
-    right: 0;
   }
 
   .panel span {
