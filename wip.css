@@ -1,18 +1,24 @@
 * { margin:0; padding:0; box-sizing:border-box; }
 body { font-family: 'Source Code Pro', monospace; background:#000; color:#fff; }
 
-#bg-video {
+/* Background GIF */
+#bg {
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  object-fit: cover;
   z-index: -1;
+  overflow: hidden;
+}
+#bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Title */
 #title {
   position: absolute;
-  top: 5vh; /* relative to screen height */
+  top: 5vh;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -32,6 +38,6 @@ body { font-family: 'Source Code Pro', monospace; background:#000; color:#fff; }
 }
 
 h1 {
-  font-size: 5vh; /* scales with viewport */
+  font-size: 5vh;
   text-shadow: 0 0 20px rgba(255,0,255,0.3);
 }
